@@ -4,29 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="70d1c96f-d255-42f2-82de-b4050de63ca7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/pythonProjectDemoqa.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/conftest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/base_page.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/elements/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/elements/elements_page.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/forms/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/forms/form_page.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/home_page.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/locators/locators._elements_page.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/locators/locators_home_page.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/home_page_test.py" afterDir="false" />
-    </list>
+    <list default="true" id="70d1c96f-d255-42f2-82de-b4050de63ca7" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

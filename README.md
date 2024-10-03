@@ -1,0 +1,1 @@
+### PythonProjectDemoqa - this is project for creatijng E2E test for site [Demoqa]("https://demoqa.com/|")

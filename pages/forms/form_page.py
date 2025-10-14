@@ -1,4 +1,4 @@
-from pages.base_page import BasePage
+from pages.base.base_page import BasePage
 
 
 class FormPage(BasePage):

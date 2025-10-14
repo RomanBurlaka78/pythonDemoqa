@@ -13,6 +13,7 @@ class BasePage:
 
     def open(self):
         self.driver.get(self.URL)
+        return self
 
     def wait2(self):
         return WebDriverWait(self.driver, 2)
@@ -24,4 +25,5 @@ class BasePage:
         return WebDriverWait(self.driver, 10)
 
     def scroll_page(self):
-        return self.driver.execute_script("window.scrollTo(0,1000)")
+        self.driver.execute_script("window.scrollTo(0,1000)")
+        return self

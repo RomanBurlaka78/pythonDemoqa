@@ -101,6 +101,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: allure-history
+          force_orphan: true
 
       # 13 Save logs if not-success
       - name: Save test logs

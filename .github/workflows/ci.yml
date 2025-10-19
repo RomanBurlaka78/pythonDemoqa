@@ -16,35 +16,35 @@ jobs:
     steps:
       # 1 Checkout repository
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.2.2
 
       # 2 Set up Python
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v5.2.0
         with:
           python-version: '3.12'
 
-      # 3 Set up Chrome for Selenium
-      - name: Set up Chrome and Chromedriver
-        uses: browser-actions/setup-chrome@v1
-
-      # 4  Install dependencies
+      # 3  Install dependencies
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      # 5 Run tests with Allure results
-      - name: Run pytest and generate allure results
-        run: |
-          pytest --alluredir=allure-results --clean-alluredir -v -s
+      # 4  Verify installed packages
+      - name: Verify installed packages
+        run: pip freeze
 
-      # 6 Install Allure CLI
-      - name: Install Allure CLI
+      # 5 Set up Chrome for Selenium
+      - name: Set up Chrome and Chromedriver
+        uses: browser-actions/setup-chrome@v1
+
+      # 6 Run tests with Allure results
+      - name: Run tests
         run: |
-          sudo apt-add-repository ppa:qameta/allure -y
-          sudo apt-get update
-          sudo apt-get install allure -y
+          pytest -s --alluredir=allure-results --disable-warnings -q
+        env:
+          PYTHONDONTWRITEBYTECODE: 1
+          PYTHONUNBUFFERED: 1
 
       # 7 Generate Allure report
       - name: Generate Allure report
@@ -86,6 +86,9 @@ jobs:
           gh_pages: gh-pages
           allure_report: allure-report
           allure_history: allure-history
+          ref: gh-pages
+          path: gh-pages
+          keep_reports: 30
 
       # 12 Publish Allure report to GitHub Pages
       - name: Publish Allure report to GitHub Pages
@@ -94,3 +97,18 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: allure-history
+
+      # 13 Save logs if not-success
+      - name: Save test logs
+        if: failure()
+        run: |
+          pytest --log-cli-level=INFO --capture=tee-sys --disable-warnings > pytest.log || true
+        shell: bash
+
+        # 14 Loading logs as artifacts
+      - name: Upload logs
+        if: failure()
+        uses: actions/upload-artifact@v4.4.3
+        with:
+          name: pytest-logs
+          path: pytest.log

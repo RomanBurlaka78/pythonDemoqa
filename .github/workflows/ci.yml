@@ -42,10 +42,13 @@ jobs:
       # 6 Run tests with Allure results
       - name: Run tests
         run: |
-          pytest -s --alluredir=allure-results --disable-warnings -q
-        env:
-          PYTHONDONTWRITEBYTECODE: 1
-          PYTHONUNBUFFERED: 1
+          pytest  --alluredir=allure-results --disable-warnings -q
+      
+      - name: Install Allure
+        run: |
+          sudo apt-add-repository ppa:qameta/allure -y
+          sudo apt-get update
+          sudo apt-get install allure -y
 
       # 7 Generate Allure report
       - name: Generate Allure report

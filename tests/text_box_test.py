@@ -1,7 +1,9 @@
+import pytest
 
 from pages.home_page import HomePage
 
 name = "Ola"
+@pytest.mark.regression
 def test_text_box(driver):
     result: str = HomePage(driver)\
     .open() \

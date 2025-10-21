@@ -22,7 +22,6 @@ class TextBoxPage(BasePage):
     def check_result(self):
         self.driver.implicitly_wait(6)
         get_text_name = self.driver.find_element(By.ID, LocatorsTextBox.name).text
-        # self.wait5().until(lambda _ : get_text_name.is_displayed())
 
         return get_text_name
 
